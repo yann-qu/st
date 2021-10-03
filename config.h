@@ -5,16 +5,16 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Font:pixelsize=18:antialias=true:autohint=true";
+static char *font = "FiraCode NFM:pixelsize=20:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
 /*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
 /*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 //    "SauceCodePro Nerd Font:pixelsize=18:antialias=true:autohint=true",
-    "Hack Nerd Font:pixelsize=18:antialias=true:autohint=true", // powerline
-    "Symbola:pixelsize=18:antialias=true:autohint=true", // Unicode
-    "IPAGothic:pixelsize=18:antialias=true:autohint=true", // Japanese
-    
+    "Hack NFM:pixelsize=20:antialias=true:autohint=true", // powerline
+    "Symbola:pixelsize=20:antialias=true:autohint=true", // Unicode
+    "IPAGothic:pixelsize=20:antialias=true:autohint=true", // Japanese
+    "Noto Sans CJK SC:pixelsize=20:antialias=true:autohint=true", // Chinese
 };
 
 static int borderpx = 2;
@@ -205,9 +205,9 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
+	{ MODKEY|ControlMask,   XK_Up,          zoom,           {.f = +1} },
+	{ MODKEY|ControlMask,   XK_Down,        zoom,           {.f = -1} },
+	{ MODKEY|ControlMask,   XK_BackSpace,   zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
@@ -215,7 +215,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ MODKEY,               XK_k,           kscrollup,      {.i =  1} },
 	{ MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
-    { MODKEY|ControlMask,   XK_k,           kscrollup,      {.i = -1} },
+	{ MODKEY|ControlMask,   XK_k,           kscrollup,      {.i = -1} },
 	{ MODKEY|ControlMask,   XK_j,           kscrolldown,    {.i = -1} },
 
 };
